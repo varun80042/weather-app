@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -356,7 +355,15 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       );
                     } else {
-                      return CircularProgressIndicator();
+                      return Expanded(
+                        child: SnackBar(
+                          content: const Text('Invalid city name'),
+                          action: SnackBarAction(
+                            label: 'Retry',
+                            onPressed: () {},
+                          ),
+                        ),
+                      );
                     }
                   })
             ],
